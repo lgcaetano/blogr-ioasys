@@ -385,10 +385,14 @@ body{
     border-radius: 5px;
     overflow: hidden;
     width: 90%;
+    transform: scaleY(0);
+    max-height: 0px;
 }
 
 .mb-options.toggle-animation{
+    max-height: 100vh;
     animation: slide-down 2s;
+    transform: scaleY(1);
 }
 
 hr{
@@ -398,6 +402,7 @@ hr{
 }
 
 .mb-login{
+    cursor: pointer;
     font-weight: bold;
     margin: 20px 0px;
 }
