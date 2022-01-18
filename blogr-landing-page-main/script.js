@@ -20,32 +20,49 @@ mobileOptions = [
 
 document.querySelectorAll(".mb-title").forEach((title, index) => {
     title.onclick = () => {
-        document.querySelector("#hr2").classList.add("visible")
+            
+        
+        let count = 0
         let options = mobileOptions[index]
         let dropdown = document.querySelector("#mb-dropdown")
         let dropdownOps = dropdown.querySelectorAll(".mb-op")
         let arrows = document.querySelectorAll(".mb-arrow")
+        
+        dropdown.classList.remove("toggle-animation")
+        
+
         for(i = 0; i < arrows.length; i++){
             if (i == index)
                 arrows[i].classList.toggle("activated")
             else
                 arrows[i].classList.remove("activated")
         }
+
+
         for (i = 0; i < options.length; i++) {
             if(dropdownOps[i].innerHTML == options[i]){
                 dropdownOps[i].classList.remove("visible")
                 dropdownOps[i].innerHTML = ""
-            }else{
+            } else{
+                count++
                 dropdownOps[i].innerHTML = options[i]
                 dropdownOps[i].classList.add("visible")
             }
         }
+
+
         for (i = i; i < dropdownOps.length; i++){
             dropdownOps[i].innerHTML = ""
             dropdownOps[i].classList.remove("visible")
         }
 
-        dropdown.classList.toggle("toggle-animation")
+
+        if (count != 0){
+            document.querySelector("#hr2").classList.add("visible")
+            setTimeout(() => dropdown.classList.add("toggle-animation"), 0)
+        } else
+            document.querySelector("#hr2").classList.remove("visible")
+        
     }
 })
 
