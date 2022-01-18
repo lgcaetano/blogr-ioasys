@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | [Blogr]</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,85 +21,210 @@
   </style>
 </head>
 <body>
-  Product
+  <section class="orange">
+    <nav class="top-menu">
+      <div class="logo">
+        <img src="images/logo.svg" alt="">
+      </div>
+      <div class="dropdown">
+        <div class="drop-title">
+          Product
+          <img src="images/icon-arrow-light.svg" alt="" class="drop-arrow">
+        </div>
+        <div class="drop-menu">
+          <div class="drop-op">
+            Overview
+          </div>
+          <div class="drop-op">
+            Pricing
+          </div>
+          <div class="drop-op">
+            Marketplace
+          </div>
+          <div class="drop-op">
+            Features
+          </div>
+          <div class="drop-op">
+            Integrations
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <div class="drop-title">
+          Company
+          <img src="images/icon-arrow-light.svg" alt="" class="drop-arrow">
+        </div>
+        <div class="drop-menu">
+          <div class="drop-op">
+            About
+          </div>
+          <div class="drop-op">
+            Team
+          </div>
+          <div class="drop-op">
+            Blog
+          </div>
+          <div class="drop-op">
+            Careers
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <div class="drop-title">
+          Connect
+          <img src="images/icon-arrow-light.svg" alt="" class="drop-arrow">
+        </div>
+        <div class="drop-menu">
+          <div class="drop-op">
+            Contact
+          </div>
+          <div class="drop-op">
+            Newsletter
+          </div>
+          <div class="drop-op">
+            LinkedIn
+          </div>
+        </div>
+      </div>
+      <div class="login">
+        Login
+      </div>
+      <div class="white-button sign-up">
+        Sign Up
+      </div>
+      <button class="toggle-ham">
+        <img src="images/icon-hamburger.svg" alt="">
+      </button>
+      <div class="mobile-menu">
+        
+      </div>
+    </nav>
+    <div class="intro-panel">
+      <h1 class="intro-main">
+        A modern publishing platform
+      </h1>
+      <h3 class="intro-secondary">
+        Grow your audience and build your online brand
+      </h3>
+      <div class="intro-buttons">
+        <button class="white-button">
+          Start for Free
+        </button>
+        <button class="transparent-button">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="white ubuntu">
+    <h2 class="section-title">
+      Designed for the future
+    </h2>
+    <div class="content phone-reverse">
+      <div class="text-half">
+        <div class="text-container">
+          <h3 class="paragraph-title">
+            Introducing an extensible editor
+          </h3>
+          <p class="paragraph">
+            Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+            The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+            videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+            change the looks of a blog.
+          </p>
+        </div>
+        <div class="text-container">
+          <h3 class="paragraph-title">
+            Robust content management
+          </h3>
+          <p class="paragraph">
+            Flexible content management enables users to easily move through posts. Increase the usability of your blog
+            by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+          </p>
+        </div>
+      </div>
+      <div class="imgs-half">
+        <img src="/images/illustration-editor-desktop.svg" alt="" class="desktop first-img">
+      </div>
+    </div>
+  </section>  
 
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
+  <section class="dark white-text">
+    <div class="content">
+      <div class="imgs-half">
+        <img src="images/illustration-phones.svg" alt="" class="second-img">
+      </div>
+      <div class="text-half">
+        <div class="text-container white-text">
+          <h2 class="paragraph-title">
+            State of the Art Infrastructure
+          </h2>
+          <p class="paragraph">
+            With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+            This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  Company
+  <section class="white">
+    <div class="content">
+      <div class="imgs-half">
+        <img src="images/illustration-laptop-desktop.svg" alt="" class="third-img">
+      </div>
+      <div class="text-half">
+        <div class="text-container">
+          <h3 class="paragraph-title">
+            Free, open, simple
+          </h3>
+          <p class="paragraph">
+            Blogr is a free and open source application backed by a large community of helpful developers. It supports
+            features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
+            and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+          </p>
+        </div>
+        <div class="text-container">
+          <h3 class="paragraph-title">
+            Powerful tooling
+          </h3>
+          <p class="paragraph">
+            Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, butcapable of producing even the most complicated sites.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  About
-  Team
-  Blog
-  Careers
-
-  Connect
-
-  Contact
-  Newsletter
-  LinkedIn
-  
-  Login
-  Sign Up
-
-  A modern publishing platform
-  Grow your audience and build your online brand
-
-  Start for Free
-  Learn More
-
-  Designed for the future
-
-  Introducing an extensible editor
-  Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
-  The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
-  videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
-  change the looks of a blog.
-
-  Robust content management
-  Flexible content management enables users to easily move through posts. Increase the usability of your blog 
-  by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
-
-  State of the Art Infrastructure
-  With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
-  This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-
-  Free, open, simple
-  Blogr is a free and open source application backed by a large community of helpful developers. It supports 
-  features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
-  and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
-
-  Powerful tooling
-  Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
-  capable of producing even the most complicated sites.
-
-  Product
-
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
-
-  Company
-
-  About
-  Team
-  Blog
-  Careers
-
-  Connect
-  
-  Contact
-  Newsletter
-  LinkedIn
-
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="images/logo.svg" alt="">
+    </div>
+    <div class="footer-info">
+      <div class="info-title">Product</div>
+      <div class="footer-link">Overview</div>
+      <div class="footer-link">Pricing</div>
+      <div class="footer-link">Marketplace</div>
+      <div class="footer-link">Features</div>
+      <div class="footer-link">Integration</div>
+    </div>
+    <div class="footer-info">
+      <div class="info-title">Company</div>
+      <div class="footer-link">About</div>
+      <div class="footer-link">Team</div>
+      <div class="footer-link">Blog</div>
+      <div class="footer-link">Careers</div>
+    </div>
+    <div class="footer-info">
+      <div class="info-title">Connect</div>
+      <div class="footer-link">Contact</div>
+      <div class="footer-link">Newsletter</div>
+      <div class="footer-link">LinkedIn</div>
+    </div>
+  </footer> 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://lgcaetano.netlify.app">Luis Gabriel Caetano Diniz</a>.
   </div>
 </body>
 </html>
