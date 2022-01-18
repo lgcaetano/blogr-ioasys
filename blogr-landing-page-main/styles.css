@@ -10,11 +10,30 @@
     --gradient-intro: linear-gradient(to right, var(--very-light-red), var(--light-red));
     --gradient-body: linear-gradient(to right, var(--very-dark-gray-blue), var(--dark-desat-blue));
     --button-padding: 10px 25px;
+    --shadow: 0px 0px 20px 1px rgb(0, 0, 0, 0.3);
+    --mb-menu-gray: rgb(238, 238, 238);
 }
 
+@keyframes slide-down{
+    0%{
+        transform: scaleY(0);
+        color: transparent
+    }
+    50%{
+        transform: scaleY(1);
+        color: transparent;
+    }
+    100%{
+        color: initial;
+    }
+}
 
 .ubuntu{
     font-family: 'Ubuntu', sans-serif;
+}
+
+.larger-font{
+    font-size: 1.15rem;
 }
 
 section{
@@ -42,7 +61,7 @@ body{
     margin: 0;
     padding: 0;
     color: var(--very-dark-blue);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .orange{
@@ -52,7 +71,7 @@ body{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     border-radius: 0px 0px 0px 100px;
 }
 
@@ -77,7 +96,7 @@ body{
     z-index: -1;
     opacity: 0;
     color: black;
-    box-shadow: 0px 0px 20px 1px rgb(0, 0, 0, 0.3);
+    box-shadow: var(--shadow);
     transition: 1s all;
     display: flex;
     flex-direction: column;
@@ -113,7 +132,7 @@ body{
 
 
 .drop-title{
-    padding: 10px 25px;
+    padding: 10px 20px;
     transition: 700ms all;
     display: flex;
     justify-content: center;
@@ -204,8 +223,9 @@ body{
 
 .white{
     display: flex;
+    /* overflow-x: hidden; */
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     align-items: center;
 }
 
@@ -312,16 +332,138 @@ body{
     margin-left: 10px;
 }
 
-.drop-arrow.activated{
+.mb-arrow{
+    transition: 500ms all
+}
+
+
+.drop-arrow.activated, .mb-arrow.activated{
     transform: rotate(180deg);
 }
 
+.toggle-ham{
+    display: none;
+}
+
+.mobile-menu{
+    position: absolute;
+    box-sizing: border-box;
+    background: var(--white);
+    color: var(--very-dark-blue);
+    top: 100%;
+    right: 20px;
+    width: 440px;
+    border-radius: 4px;
+    max-width: 80vw;
+    font-weight: bold;
+    display: none;
+    box-shadow: var(--shadow);
+}
+
+.mb-titles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.mb-op{
+    display: none;
+}
+
+.mb-op.visible{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    color: var(--dark-desat-blue);
+}
+
+.mb-options{
+    background-color: var(--mb-menu-gray);
+    border-radius: 5px;
+    overflow: hidden;
+    width: 90%;
+    animation: slide-down 1s;
+    animation-iteration-count: 1;
+}
+
+.mb-options.toggle-animation{
+    animation: slide-down 1s;
+    animation-iteration-count: 1;
+}
+
+hr{
+    width: 100%;
+    border: 1px solid var(--mb-menu-gray);
+    border-radius: 9999px;
+}
+
+.mb-login{
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.red-button{
+    background: var(--gradient-intro);
+    color: var(--white);
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+#hr2{
+    display: none;
+}
+
+#hr2.visible{
+    display:initial
+}
+
 @media (max-width: 750px){
+
+    .intro-buttons{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .mobile-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+        opacity: 0;
+        z-index: -1;
+        transition: 500ms all;
+    }
+
+    .mobile-menu.visible{
+        opacity: 1;
+        z-index: 1;
+    }
+
     .dropdown, .login, .sign-up{
         display: none;
     }
+    .toggle-ham{
+        display: initial;
+        transition: 500ms all;
+    }
+    .toggle-ham.activated{
+        transform: rotate(90deg);
+    }
+
     .top-menu{
-        justify-content: space-around;
+        padding: 30px;
+        justify-content: space-between;
     }
 
     .content, .footer{
@@ -358,6 +500,10 @@ body{
     .intro-main{
         padding: 0px  50px;
         font-size: 1.75rem;
+    }
+
+    .intro-secondary{
+        padding: 0px  50px;
     }
 
 }
